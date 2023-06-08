@@ -1,0 +1,33 @@
+<!-- Import the Bootstrap classes and components -->
+<div class="container">
+  <button class="btn btn-primary" (click)="createnav()">Create New Product</button>
+
+  <div>
+    <h2>Available Products</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Product ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of Products">
+          <td>{{ product.productId }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.qty }}</td>
+          <td>
+            <button class="btn btn-danger" *ngIf="product.productId !== undefined" (click)="deleteProduct(product.productId)">Delete</button>
+            <button class="btn btn-primary" *ngIf="product.productId !== undefined" (click)="updateProduct(product.productId)">Update</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
