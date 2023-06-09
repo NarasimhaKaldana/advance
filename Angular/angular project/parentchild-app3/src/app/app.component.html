@@ -1,0 +1,7 @@
+<h2>Parent Component</h2>
+
+<p>Parent Count: {{ parentCount }}</p>
+
+<button (click)="incrementCount()">Increment Count</button>
+
+<app-child [childCount]="parentCount" (countChanged)="updateParentCount($event)"></app-child>

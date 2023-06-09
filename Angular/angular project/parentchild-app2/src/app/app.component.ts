@@ -16,6 +16,6 @@ export class AppComponent {
     parentItems = ['Item 1', 'Item 2', 'Item 3'];
   
     onChildEvent(newItem: string) {
-      this.parentItems.push(newItem);
+      this.parentItems.push(newItem); 
     }
   }
